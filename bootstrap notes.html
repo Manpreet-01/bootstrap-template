@@ -1,0 +1,831 @@
+											bootstrap@5.3.2
+
+// Import Bootstrap CSS in your component
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+// Import Bootstrap JS if needed
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
+// if needed
+import 'popper.js';
+
+const bootstrap = require('bootstrap') or import bootstrap from 'bootstrap' 
+
+
+
+
+UTILITY CLASSES:
+
+w-25 h-25
+w-50 h-50
+w-75 h-75
+w-100 h-100
+w-auto h-auto
+
+text-bg-dark   			=>     text-light &&  bg-dark
+bg-opacity-25			=>    25%
+text-opacity-50s		=>	 50%
+
+link-dark				=>   for links color styles
+
+
+opacity-50				=>  50% opacity of element
+
+
+
+
+Breakpoints			Class infix		Dimensions
+
+Extra small			None			<576px
+Small				sm				≥576px
+Medium				md				≥768px
+Large				lg				≥992px
+Extra large			xl				≥1200px
+Extra extra large	xxl				≥1400px
+
+
+
+
+
+				Extra small	Small 	Medium 	Large 	X-Large XX-Large
+					<576px 	≥576px 	≥768px 	≥992px 	≥1200px ≥1400px
+					
+.container			100%	540px	720px	960px	1140px	1320px
+.container-sm		100%	540px	720px	960px	1140px	1320px
+.container-md		100%	100%	720px	960px	1140px	1320px
+.container-lg		100%	100%	100%	960px	1140px	1320px
+.container-xl		100%	100%	100%	100%	1140px	1320px
+.container-xxl		100%	100%	100%	100%	100%	1320px
+.container-fluid	100%	100%	100%	100%	100%	100%
+
+
+
+
+if we don't define breakpoints then 
+container -> auto responsive
+col -> auto responsive
+
+
+
+cols => 12 cols layout in a row.
+
+if we define more than 12 cols in a row it wrapps the extra cols in next line.
+
+
+"col" -> take as mush space as possible but evenly between no of the "div.cols" available
+
+
+eg. col1 and col2 takes 50 50 space here.
+
+	<div class="row">
+		<div class="col"><div class="box">col1</div></div>
+		<div class="col"><div class="box">col2</div></div>
+	</div>
+
+
+if we don't define smaller breakpoints then
+"col-xl-2 col-lg-4" on md and small devices col width is full row 100%. ("col-12" be default here)
+
+
+
+
+
+OFFSET:	offset start from 1st column if element wrapp to next line.
+4 cols offset and c1 takes 5 6 7 cols, and c2 wrap on second line and 
+takes 9 cols offset and takes 10 11 12 cols
+	
+	<div class="row">
+		<div class="col-3 offset-4"><div class="box">c1</div></div>  
+		<div class="col-3 offset-9"><div class="box">c2</div></div>
+	</div>
+
+
+
+
+
+
+ROWS:
+	<div class="row row-cols-2">
+		<div class="col"><div class="box">c1</div></div>
+		<div class="col"><div class="box">c2</div></div>
+		<div class="col"><div class="box">c3</div></div>
+		<div class="col"><div class="box">c4</div></div>
+		<div class="col"><div class="box">c5</div></div>
+	</div>
+	
+
+GAP:
+	g-0  g-1  g-2  g-3  g-4  g-5            both direction
+	gx-0 gx-1 gx-2 gx-3 gx-4 gx-5			x > direction
+	gy-0 gy-1 gy-2 gy-3 gy-4 gy-5			y ^ direction
+	
+
+PADDING CLASSES:
+p-1 to p-5 		for padding variations.
+pt-1 to pt-5 	for padding on the top.
+pb-1 to pb-5 	for padding on the bottom.
+ps-1 to ps-5 	for padding on the left / start.
+pe-1 to pe-5 	for padding on the right / end.
+px-1 to px-5 	for horizontal padding.
+py-1 to py-5 	for vertical padding.
+
+
+MARGIN CLASSES:
+m-1 to m-5 		for margin variations.
+mt-1 to mt-5 	for margin on the top.
+mb-1 to mb-5 	for margin on the bottom.
+ms-1 to ms-5 	for margin on the left / start.
+me-1 to me-5 	for margin on the right / end.
+mx-1 to mx-5 	for horizontal margin.
+my-1 to my-5 	for vertical margin.
+
+
+BORDER CLASSES:
+border 			for a border on all sides.
+border-top		for a top border.
+border-bottom 	for a bottom border.
+border-start 	for a left / start border.
+border-end 		for a right / end border.
+	
+
+BORDER ROUNDNESS:
+rounded-1 rounded-2 rounded-3 rounded-4 rounded-5
+rounded-pill
+rounded-circle
+
+border-opacity-50  	=> 50% 
+
+border-5			=> thickness level
+
+
+
+	<div class="border border-primary border-5 rounded-4 border-opacity-50">
+		this is some text this is some text this is some text this is some text this is some text 
+	</div>
+
+
+
+DISPLAY:
+d-block	d-lg-block
+d-none	d-lg-none
+
+
+
+TABLE:
+table
+table-sm  			remove some padding to compact the table to store large data
+
+table-responsive 	if has very large data, enclosed table with div.table-responsive
+					gives scrollbar so view full data. otherwise overflow data
+					will hidden by default.
+
+table-responsive-sm... specify a breakpoint
+
+table-striped
+table-striped-columns
+
+table-hover
+table-active @for hover state active by default
+table-bordered
+table-borderless
+
+						colors of table elements:
+tale-primary 
+table-secondary
+table-success
+table-info
+table-warning
+table-danger
+table-dark
+table-light
+
+
+thead.table-group-divider	horizontal divider (  like a hr line )
+tbody.table-group-divider
+tfoot.table-group-divider
+
+<!-- table -->
+<table class="table table-dark">
+	<thead>
+		<tr class="table-danger">
+			<th>First</th><th>Last</th><th>Age</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="table-info">
+			<td>Harsh</td><td>Kumar</td><td>27</td>
+		</tr>
+		<tr  class="table-warning">
+			<td>Nitish</td><td>Arora</td><td>22</td>
+		</tr>
+		<tr>
+			<td class="table-success">Girish</td><td>Sharma</td><td>29</td>
+		</tr>
+	</tbody>
+</table>
+	
+
+<!-- table -->
+<div class="table-responsive-lg">	
+	<table class="table">
+		<thead class="table-group-divider">
+			<tr>
+				<th>First</th><th>Last</th><th>Age</th>
+				<th>First</th><th>Last</th><th>Age</th>
+			</tr>
+		</thead>
+		<tbody class="table-group-divider">
+			<tr>
+				<td>Harsh</td><td>Kumar</td><td>27</td>
+			</tr>
+			<tr>
+				<td>Nitish</td><td>Arora</td><td>22</td>
+			</tr>
+			<tr>
+				<td>Girish</td><td>Sharma</td><td>29</td>
+			</tr>
+		</tbody>
+		<tfoot class="table-group-divider">
+			<tr>
+				<td>this</td><td>is a</td><td>table</td><td>footer</td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+
+
+FORM:
+
+form-label
+
+form-control   					for input tags
+form-control-lg 				size defined
+form-control-plaintext			text style as plain text
+
+form-control-color				for input[type="color"]
+form-control is-valid			green color with green tick
+form-control is-invalid			red color with error symbol
+
+form-range						for input[type="range"]
+form-select form-select-lg		for input[type="select"]
+
+
+
+form-check 						div containing checkbox
+form-check-inline				make inline elements
+form-check-label
+form-check-input
+form-check-reverse				reverse order of label and input
+
+
+input-group								enclose the group in a div.input-group
+input-group-lg or input-group-sm		define size of group
+
+form-group-text							labels inside a input group
+
+
+floating labels:
+form-floating	 enclose the input, label in div.form-floating, must have placeholder, order=input->label
+
+
+
+
+<!-- form> -->
+<form>
+	<label class="form-label" for="name">Name</label>
+	<input class="form-control"	type="name" id="name" required>
+	
+	<label class="form-label" for="email">Email</label>
+	<input class="form-control" type="email" id="email">
+	
+	<!-- readonly -->
+	<label class="form-label" for="">Read Only</label>
+	<input class="form-control form-control-lg" type="text" readonly placeholder="Read Only Field">
+	
+	<!-- disabled -->
+	<label class="form-label" for="">Disabled</label>
+	<input class="form-control form-control-lg"	type="text" disabled placeholder="Disabled Field">
+	
+	<!-- plain text -->
+	<label class="form-label" for="">Plain Text</label>
+	<input class="form-control form-control-plaintext" type="text" placeholder="this is a plain text">
+
+	<!-- btn -->
+	<button class="btn btn-primary" type="submit">Submit</button>
+</form>
+
+
+
+	<!-- color input -->
+	<label for="" class="form-label">Color Picker</label>
+	<input type="color" class="form-control-color">
+	
+	<!-- range input -->
+	<label for="" class="form-label">Range</label>
+	<input type="range" class="form-range">
+	
+
+checkbox method :-
+
+	<div class="form-check  form-check-inline">
+		<label for="ch1" class="form-check-label">Are you Agreed ?</label>
+		<input id="ch1" type="checkbox" class="form-check-input">
+	</div>
+	
+	<div class="form-check  form-check-inline">
+		<label for="ch2" class="form-check-label">Are you Ready ?</label>
+		<input id="ch2" type="checkbox" class="form-check-input">
+	</div>
+	
+
+SWITCH:		checkbox -> switch 
+	<div class="form-check form-switch">
+		<label for="sw" class="form-check-label">Are you Ready ?</label>
+		<input id="sw" type="checkbox" class="form-check-input">
+	</div>
+	
+	
+
+REVERSE:
+	<div class="form-check form-check-inline form-check-reverse">
+		<label for="ch1" class="form-check-label">Are you Agreed ?</label>
+		<input id="ch1" type="checkbox" class="form-check-input">
+	</div>
+	
+	
+
+RADIO:
+	<div class="form-check form-check-inline">
+		<label for="rd1" class="form-check-label">Good</label>
+		<input id="rd1" type="radio" class="form-check-input" name="radio1">
+	</div>
+	
+	
+	<div class="form-check form-check-inline">
+		<label for="rd2" class="form-check-label">Average</label>
+		<input id="rd2" type="radio" class="form-check-input" name="radio1">
+	</div>
+	
+	<div class="form-check form-check-inline">
+		<label for="rd3" class="form-check-label">Bad</label>
+		<input id="rd3" type="radio" class="form-check-input" name="radio1">
+	</div>
+
+
+	<!-- input group -->
+	<label for="first-name" class="form-label">Enter Full Name</label>
+	<div class="input-group input-group-lg">
+		<label for="first-name" class="input-group-text">First</label>
+		<input type="text" id="first-name" class="form-control">	
+
+		<label for="middle-name" class="input-group-text">Middle</label>
+		<input type="text" id="middle-name" class="form-control">	
+		
+		<label for="last-name" class="input-group-text">Last</label>
+		<input type="text" id="last-name" class="form-control">	
+		
+		<button class="btn btn-primary" type="submit">Go</button>
+	</div>
+	
+
+
+	<!-- floating labels -->
+	<div class="form-floating">
+		<input class="form-control" type="name" id="name" placeholder="Enter name">
+		<label class="form-label" for="name">Name</label>
+	
+	</div>
+	<div class="form-floating">
+		<input class="form-control" type="email" id="email" placeholder="Enter email">
+		<label class="form-label" for="email">Email</label>
+	</div>
+	
+	
+	
+	
+	<!-- is-valid -->
+	<input class="form-control is-valid" type="name" id="name" placeholder="Enter name">
+	
+	<!-- is-invalid -->
+	<input class="form-control is-invalid" type="email" id="email" placeholder="Enter email">
+	
+
+
+
+	
+FORM VALIDATION by bootstrap
+[ novalidate ]
+form.checkValidity()
+
+was-validated
+invalid-feedback
+valid-feedback
+	
+<form novalidate> <!-- html inbuild novalidate attribute -->
+
+	<div class="form-floating">
+		<input class="form-control" type="name" id="name" placeholder="Enter name" required>
+		<label class="form-label" for="name">Name</label>
+		
+		<div class="invalid-feedback">Incorrect name</div>		<!-- invalid-feedback -->
+		<div class="valid-feedback">Correct name</div>			<!-- valid-feedback -->
+	
+	</div>
+	
+	<div class="form-floating">
+		<input class="form-control" type="email" id="email" placeholder="Enter email" required>
+		<label class="form-label" for="email">Email</label>
+		
+		<div class="invalid-feedback">Incorrect email</div>		<!-- invalid-feedback -->
+		<div class="valid-feedback">Correct email</div>			<!-- valid-feedback -->
+	</div>
+
+	<button class="btn btn-primary" type="submit">Submit</button>
+</form>
+
+<script>
+	const form = document.querySelector("form");
+	
+	form.onsubmit = function (e) {
+		if(!form.checkValidity()){			// form.checkValidity()    browser inbuild function
+			e.preventDefault();
+		}
+		
+		form.classList.add("was-validated");	// was-validated bootstrap class for form validation
+	}
+</script>
+
+
+
+
+
+
+
+BUTTONS and LINKS:
+
+
+		<div>
+			<label>outline and without outline</label>
+			<button class="btn btn-outline-secondary">Test</button>  <!-- outline -->
+			<button class="btn btn-secondary">Test</button>
+		</div>
+		
+		<div>
+			<label>display link as a button</label>
+			<a class="btn btn-primary" href="/me">Test</a>
+			<a class="btn btn-primary disabled" href="/me">Test</a> <!-- disabled -->
+		</div>
+		
+		<div>
+			<label>display button as a link</label>
+			<button class="btn btn-link" href="/me">Test</button>
+			<button class="btn btn-link disabled" href="/me">Test</button>  <!-- disabled -->
+		</div>
+		
+		
+
+TOGGLE BUTTON:
+
+class active 	=>	for by default active
+aria-pressed	=>	for screen readers accessibility
+data-bs-toggle	=>  attribute for controlling with javascript	"-bs- means bootstrap"
+
+<button class="btn btn-outline-secondary active"
+	data-bs-toggle="button" aria-pressed="true"
+>Test</button>
+
+
+
+
+
+BUTTON GROUP:
+
+btn-group or btn-group-vertical  enclose with div.btn-group or div.btn-group-vertical
+
+<div class="btn-group-vertical">
+	<button class="btn btn-outline-primary">Click1</button>
+	<button class="btn btn-outline-primary">Click2</button>
+	<button class="btn btn-outline-primary">Click3</button>
+	<button class="btn btn-outline-primary">Click4</button>	
+</div>
+
+
+
+ALERT:
+
+alert-dismissible 	=> for dismissable for click close button.
+
+<div class="alert alert-danger alert-dismissible" role="alert">
+	<h1>This is a alert</h1>
+	<a href="#" class="alert-link">Click here for more details</a>
+	<button class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+</div>
+
+
+FADE ALERT:		<!-- add fade show classes -->
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+	<h1>This is a alert</h1>
+	<a href="#" class="alert-link">Click here for more details</a>
+	<button class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+</div>
+
+<!-- if not working by default then add this style -->
+<style>
+	@media (prefers-reduced-motion: reduce) {
+		.fade {
+			transition: opacity 0.50s linear;
+		}
+	}
+</style>
+
+
+
+
+
+
+
+
+CARDS:
+
+card
+card-header
+card-img-top
+card-body card-img-overlay
+	card-title
+	card-subtitle
+	card-text
+card-img-bottom
+card-footer
+
+card-group
+
+
+	
+<div class="container">
+
+ <!-- card-group -->
+<div class="card-group">
+<!-- card 1 -->
+<div class="card" style="width:450px">
+	<h2 class="card-header">Header</h2>
+	<img class="card-img-top" src="NewtonSchool.jpg">
+	
+	<div class="card-body ccard-img-overlay">
+		<h3 class="card-title">Card Title</h3>
+		<h4 class="card-subtitle">Card Subtitle</h4>
+		<div class="card-text">
+			this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	
+			this is a card 	this is a card 	this is a card 	this is a card 
+		</div>
+	</div>
+	
+	<div class="card-footer">Footer</div>
+</div>
+
+<!-- card 2 -->
+<div class="card" style="width:450px">
+	<h2 class="card-header">Header</h2>
+	<img class="card-img-top" src="NewtonSchool.jpg">
+	
+	<div class="card-body ccard-img-overlay">
+		<h3 class="card-title">Card Title</h3>
+		<h4 class="card-subtitle">Card Subtitle</h4>
+		<div class="card-text">
+			this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	this is a card 	
+			this is a card 	this is a card 	this is a card 	this is a card 
+		</div>
+	</div>
+	
+	<div class="card-footer">Footer</div>
+</div>
+
+
+
+
+	
+MODAL:			<!-- modal -->
+
+mdoal-xl
+modal-xxl
+modal-fullscreen
+modal-fullscreen-md-down
+
+modal-dialog
+	modal-content
+		modal-header
+		modal-body
+		modal-footer
+
+data-bs-dismiss="modal"
+
+MODAL BUTTON ATTRIBUTES:
+
+data-bs-toggle="modal"		=>		for modal button
+data-bs-target="#modal"		=>		give id of target
+
+
+<div class="container">
+	<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">Open</button>
+	
+	<div class="modal fade modal-xxl" id="modal">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable  modal-fullscreen-md-down">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1>Header</h1>
+					<button class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					<p>This is body of modal.</p>
+				</div>
+				<div class="modal-footer">Footer
+					<button data-bs-dismiss="modal" class="btn btn-primary">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- if not working by default then add this style -->
+<style>
+	@media (prefers-reduced-motion: reduce) {
+		.fade {
+			transition: opacity 0.15s linear;
+		}
+	}
+</style>
+
+
+
+COLLAPSE:
+
+data-bs-toggle="collapse"
+data-bs-target="#row"
+aria-expanded="true"
+aria-control="row"
+
+
+collapse show  => classes for collapse element
+
+
+<div class="container">
+	<button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#row"
+	aria-expanded="true" aria-controls="row">Toggle</button>
+	
+	<div class="row collapse show" id="row">
+		<div class="col">
+			<div class="box"></div>
+		</div>
+	</div>
+</div>
+
+
+PAGINATION:
+pagination pagination-lg pagination-sm
+page-item
+page-link
+
+<!-- use text -->
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item active"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>
+
+<!-- use symbols  -->
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+
+NAV:
+nav
+nav justify-content-center
+nav justify-content-end
+nav flex-column flex-row etc... flex properties
+nav-tabs
+nav-pills
+nav-underline
+nav-fill
+nav-justified
+
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+  </li>
+</ul>
+
+
+<nav class="nav nav-pills nav-fill">
+  <a class="nav-link active" aria-current="page" href="#">Active</a>
+  <a class="nav-link" href="#">Much longer nav link</a>
+  <a class="nav-link" href="#">Link</a>
+  <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+</nav>
+
+
+NAVBAR:
+
+	<!-- navbar-text -->
+	<!-- navbar-expand  -->
+	
+<div class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+        <a href="#" class="navbar-brand">Brand</a>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-label="Expand Navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact us</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- gap -->
+
+<!-- hstack -->
+<div class="hstack gap-3">
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+</div>
+
+<!-- vstack -->
+<div class="vstack gap-3">
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+</div>
+
+
+
+
+
+FLEX FLEXBOX
+
+
+d-flex
+flex-column flex-row flex-column-reverse flex-row-reverse
+
+align-items-start align-items-center align-items-end
+align-items-stretch align-items-baseline
+
+justify-content-start justify-content-center justify-content-end
+justify-content-evenly justify-content-around justify-content-between
+
+flex-wrap flex-nowrap
+
+align-content-center align-content-start align-content-end
+align-content-around align-content-between align-content-stretch
+
+
+flex-fill =>  flex: 1 1 auto;
+
+
+FLEX ITEM
+
+align-self-center
